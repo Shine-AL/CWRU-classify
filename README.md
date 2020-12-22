@@ -3,24 +3,31 @@
 官网提供数据下载：https://csegroups.case.edu/bearingdatacenter/pages/welcome-case-western-reserve-university-bearing-data-center-website
 
 
-class            | label
-:----------------|------
-0.007-Ball       | 1
-0.007-InnerRace  | 2
-0.007-OuterRace6 | 3
-0.014-Ball       | 4
-0.014-InnerRace  | 5
-0.014-OuterRace6 | 6
-0.021-Ball       | 7
-0.021-InnerRace  | 8
-0.021-OuterRace6 | 9
-0.000-Normal     | 0
+  损伤直径  |  损伤位置  |  标签  |  训练集  |  测试集
+:----------|------------|--------|---------|---------
+0          | 无         | 0      | 270     | 30
+0.007      | 滚动体     | 1      | 270     | 30
+0.007      | 内圈       | 2      | 270     | 30
+0.007      | 外圈       | 3      | 270     | 30
+0.014      | 滚动体     | 4      | 270     | 30
+0.014      | 内圈       | 5      | 270     | 30
+0.014      | 外圈       | 6      | 270     | 30
+0.021      | 滚动体     | 7      | 270     | 30
+0.021      | 内圈       | 8      | 270     | 30
+0.021      | 外圈       | 9      | 270     | 30
 
 ###网络：LSTM（长短期记忆网络）
 ##文件说明
-dataTo3.py：将原始数据整理成2维数据。shape:(n_samples, timestamps, features)
+dataset：原始数据
 
-dataTo3_H.py：将原始数据整理成2维数据,标签为独热编码。shape:(n_samples, timestamps, features)
+saveModel：保存训练好的模型。
 
-LSTM.py：使用LSTM分类。
+data_init.py：数据初始化，将原始数据处理成需要的样子。
+
+models.py：搭建网络结构
+
+train.py：对模型进行训练并保存。
+
+
+
 

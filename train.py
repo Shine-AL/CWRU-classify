@@ -1,3 +1,4 @@
+import tensorflow as tf
 import data_init as dt
 import models
 import matplotlib.pyplot as plt
@@ -14,3 +15,7 @@ plt.xlabel('Epoch')
 plt.ylabel('Accuracy')
 plt.show()
 
+
+model.save('./saveModel/lstm.h5')
+# 读取
+# restored_model = tf.keras.models.load_model('./saveModel/lstm.h5')

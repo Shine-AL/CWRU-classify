@@ -15,16 +15,17 @@ def LSTM():
                   metrics=['accuracy'])  # 损失函数为平均均方误差，优化器为Adam，学习率为0.001
     return model
 
+
 def LSTM2():
     model = keras.Sequential()
-    model.add(layers.LSTM(32, input_shape=(400,1), return_sequences=True))
-    model.add(layers.LSTM(32, return_sequences=True))
-    model.add(layers.LSTM(32))
+    model.add(layers.LSTM(20, input_shape=(400, 1), return_sequences=True))
+    model.add(layers.LSTM(20, return_sequences=True))
+    model.add(layers.LSTM(20))
     model.add(layers.Dense(10))
-
-    model.compile(loss='categorical_crossentropy', optimizer=keras.optimizers.Adam(lr=0.001),
-                  metrics=['accuracy'])
+    model.add(layers.Activation('softmax'))
+    model.compile(optimizer=keras.optimizers.Adam(lr=0.01), loss='mae', metrics=['accuracy'])
     return model
+
 
 def CNN():
     model = keras.Sequential()
