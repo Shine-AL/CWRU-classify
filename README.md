@@ -1,5 +1,5 @@
-#滚动轴承故障分类
-###数据集：CWRU（凯斯西储大学轴承数据中心）
+# 滚动轴承故障分类
+### 数据集：CWRU（凯斯西储大学轴承数据中心）
 官网提供数据下载：https://csegroups.case.edu/bearingdatacenter/pages/welcome-case-western-reserve-university-bearing-data-center-website
 
 
@@ -16,8 +16,8 @@
 0.021      | 内圈       | 8      | 270     | 30
 0.021      | 外圈       | 9      | 270     | 30
 
-###网络：LSTM（长短期记忆网络）
-##文件说明
+### 网络：LSTM（长短期记忆网络）
+## 文件说明
 dataset：原始数据
 
 saveModel：保存训练好的模型。
