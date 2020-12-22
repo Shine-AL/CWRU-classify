@@ -28,6 +28,9 @@ models.py：搭建网络结构
 
 train.py：对模型进行训练并保存。
 
+### cnn学习中 —— time：2020/12/22
+CNN_train.py
+
 
 
 
