@@ -29,18 +29,13 @@ def LSTM2():
 
 def CNN():
     model = keras.Sequential()
-    model.add(layers.Conv2D(4, (10, 10), padding='same', activation='relu', input_shape=(20, 20, 1)))
-    model.add(layers.MaxPooling2D((3, 3), strides=2))
-    model.add(layers.Conv2D(4, (5, 5), padding='same', activation='relu'))
-    model.add(layers.MaxPooling2D((3, 3), strides=2))
-    model.add(layers.Conv2D(8, (3, 3), padding='same', activation='relu'))
-    model.add(layers.Conv2D(8, (3, 3), padding='same', activation='relu'))
-    model.add(layers.Conv2D(8, (3, 3), padding='same', activation='relu'))
-    model.add(layers.MaxPooling2D((3, 3), strides=2))
+    model.add(layers.Conv2D(16, (1, 1), activation='relu', input_shape=(20, 20, 1)))
+    model.add(layers.MaxPooling2D((8, 8), strides=8, padding='same'))
+    model.add(layers.Conv2D(16, (1, 1), activation='relu'))
+    model.add(layers.MaxPooling2D((2, 2), strides=1, padding='same'))
     model.add(layers.Flatten())
-    model.add(layers.Dense(64, activation='relu'))
-    model.add((layers.Dense(6, activation='softmax')))
-    model.compile(optimizer='rmsprop',
+    model.add(layers.Dense(10))
+    model.compile(optimizer=keras.optimizers.Adam(lr=0.009),
                   loss='categorical_crossentropy',
                   metrics=['accuracy'])
 

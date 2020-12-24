@@ -62,16 +62,16 @@ def read_data_H():
 
 # 二维数据
 def dataTo2():
-    x, y = read_data()
+    x, y = read_data_H()
 
     # 对数据集打乱
     per = np.random.permutation(x.shape[0])
     new_x = x[per, :]
-    new_y = y[per]
+    new_y = y[per,:]
 
-    train_x = new_x[:2700]
+    train_x = new_x[:2700].reshape(-1,20,20,1)
     train_y = new_y[:2700]
-    test_x = new_x[2700:3000]
+    test_x = new_x[2700:3000].reshape(-1,20,20,1)
     test_y = new_y[2700:3000]
 
     return train_x, train_y, test_x, test_y
