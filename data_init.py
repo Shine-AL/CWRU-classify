@@ -1,7 +1,6 @@
 from scipy.io import loadmat
 import numpy as np
 
-
 # 读取 120000 原始数据
 def read_org_data(dir, ID):
     data = loadmat(dir)[ID + '_DE_time'][:120000]
